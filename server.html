@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minecraft</title>
+  <meta property="og:image" content="https://mcapi.us/server/image?ip=professorminecraft.a3ddns.com:10031">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    #imagem-servidor {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      setInterval(function() {
+        var imagem = document.getElementById("imagem-servidor");
+        imagem.src = "https://mcapi.us/server/image?ip=professorminecraft.a3ddns.com:10031";
+      }, 5000); // Atualiza a cada 5 segundos
+    };
+  </script>
+</head>
+<body>
+  <img id="imagem-servidor" src="https://mcapi.us/server/image?ip=professorminecraft.a3ddns.com:10031" alt="Imagem do servidor Minecraft">
+</body>
+</html>
