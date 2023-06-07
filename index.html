@@ -1,0 +1,167 @@
+<html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #232525;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    min-height: 90vh;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: none;
+    font-size: 30px;
+    padding: 40px;
+    opacity: 0.8;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 30px 0 30px 0px;
+    letter-spacing: 2.5px;
+}
+
+.container {
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.card {
+    align-items: center;
+    display: flex;
+    text-align: left;
+    margin: 0 100px 0 100px;
+    background-color: #181717;
+    border-radius: 6.5px;
+    padding: 30px;
+    height: 400px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.illustration {
+    width: 450px;
+    margin-right: 40px;
+    animation: mooth 2.5s alternate infinite linear;
+}
+
+@keyframes mooth {
+    from {
+        transform: translatey(.75em);
+    }
+    
+    to {
+        transform: translatey(-.75em);
+    }
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.description {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.invite-link {
+    text-decoration: none;
+    color: #6C63FF;
+    outline: none;
+}
+
+.btn {
+    margin: 50px 0 0 0;
+}
+
+.card .right .btn a {
+    padding: 15px 30px 15px 30px;
+    text-decoration: none;
+    border: 1px solid #6C63FF;
+    color: white;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+.card .right .btn a:nth-child(1) {
+    margin-right: 20px;
+}
+
+.card .right .btn a:active {
+    outline: none;
+}
+
+.card .right .btn a:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 10px 2px #6C63FF;
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.75;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 26px;
+}
+  </style>
+<body>
+    <section>
+        <h1 class="info-title">Discord</h1>
+        <div class="container">
+            <div class="card">
+                <div class="left">
+                  <style>
+  img {
+    margin-right: 50px;
+  }
+</style>
+                    <img src="https://cdn.discordapp.com/avatars/1063456589421482094/e1459934e3c51cc68fda61637b7e321e.png?size=512"
+                  width="300" height="300">
+                </div>
+                <div class="right">
+                  <h4 class="title"><code>ProfessorMinecraft#0238</code></h4>
+                    <p class="description">Nosso bot de minecraft exclusivo para o servidor do ProfessorMinecraft é uma ferramenta poderosa para ajudar nossos espectadores a se envolverem com o conteúdo e a comunidade. Com uma combinação de comandos por barra e prefixo, nosso bot oferece uma variedade de recursos, incluindo informações sobre usuários da versão Java, status de um host server, gerador de sementes e muito mais. Para participar e liberar todos os comandos, basta interagir com o bot em canal privado com comando <p><code>/invite</code>.</p> 
+<br>
+<br>
+                  <h3>### Junte-se a nós e faça parte da nossa comunidade engajada!</h3> 
+                  <br>
+                  <br>
+                  <a class="invite-link" href="https://discord.bots.gg/bots/1063456589421482094">https://discord.bots.gg/bots/1063456589421482094</a></p>
+                    <div class="btn">
+                        <a class="btn-redirect" href="https://discord.com/api/oauth2/authorize?client_id=1063456589421482094&permissions=8&scope=bot">Adicionar Bot</a>
+                        <a class="btn-redirect" href="#">/help</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="letter-spacing: 0.5px;">
+        Copyright © 2023
+    </footer>
+    
+</body>
+</html>
