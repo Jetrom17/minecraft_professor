@@ -1,27 +1,73 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
-  <head>
-    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-    <title>Minecraft</title>
-    <style>
-      body {
-        margin: 0px;
-        background: green;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+<html>
+<head>
+  <title>Status do servidor Minecraft</title>
+  <style>
+    body {
+      background-color: green;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Status do servidor Minecraft</h1>
+  
+  <p id="status"></p>
+  <p id="jogadores"></p>
+  <img src="https://mcapi.us/server/image?ip=professorminecraft.a3ddns.com:10031">
+
+  <script>
+    // status do servidor
+    function exibirStatusServidor(status) {
+      var statusElement = document.getElementById("status");
+      statusElement.textContent = "Status: " + (status.online ? "Online" : "Offline");
+    }
+
+    // exibir os jogadores online
+    function exibirJogadoresOnline(status) {
+      var listaJogadores = "";
+      if (status.players.sample && status.players.sample.length > 0) {
+        listaJogadores = status.players.sample.map(function(player) {
+          return player.name;
+        }).join(", ");
       }
-      
-      img {
-        display: block;
-        margin: auto;
-        background-color: hsl(0, 0%, 90%);
-        transition: background-color 300ms;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="https://mcapi.us/server/image?ip=professorminecraft.a3ddns.com:10031">
-  </body>
+      document.getElementById("jogadores").textContent = "Jogadores online: " + listaJogadores;
+    }
+
+    // obter o status do servidor
+    function getStatusDoServidor() {
+      var url = "https://eu.mc-api.net/v3/server/ping/professorminecraft.a3ddns.com:10031"; // Substitua pelo URL correto da API
+
+      fetch(url)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          exibirStatusServidor(data);
+          exibirJogadoresOnline(data);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
+    // status do servidor ao recarregar a página
+    window.onload = function() {
+      getStatusDoServidor();
+      setInterval(getStatusDoServidor, 5000); // Atualizar o status a cada 5 segundos
+    };
+  </script>
+</body>
 </html>
